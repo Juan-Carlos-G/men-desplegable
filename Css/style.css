@@ -1,0 +1,189 @@
+/* * google fonts */ 
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap');
+
+ 
+
+
+/* normalize */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root{
+    /* Colores */
+    --A:#C5FFF8;
+    --B:#96EFFF;
+    --C:#5FBDFF;
+    --D:#7B66FF;
+
+    ---Gadien-1: radial-gradient( circle farthest-corner at 7.2% 13.6%,  rgba(37,249,245,1) 0%, rgba(8,70,218,1) 90% ) no-repeat fixed center;
+
+    /* Fuentes */
+    --titulos: 'UnifrakturCook', cursive;
+    --texto: 'UnifrakturMaguntia', cursive;
+
+}
+
+/* Animacion */
+@keyframes titular{
+    10%{
+        transform: rotateX(360deg);
+
+    }
+    0%{
+        transform: scale(50%);
+    }
+
+}
+
+@keyframes nav-links{
+    0%{
+        transform: rotatey(360deg);
+
+    }
+
+}
+
+@keyframes navbar{
+    0%{
+        transform: translatey(-100%);
+    }
+}
+
+.titulo{
+    font-family: var(--titulos);
+    
+    color: rgb(41, 6, 97);
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: rgb(63, 161, 247) 0 0 15px;
+    padding: 15px 0px;
+    animation-name: titular;
+    
+
+    animation-duration: 2.5s;
+}
+header{
+  
+    display: flex;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    z-index: 2;
+
+
+    justify-content: space-between;
+    background: var(--A)
+}
+
+
+.geass{
+    animation-duration: 2.5s;
+    animation-name: nav-links;
+    animation-iteration-count: infinite ;
+    display: flex;
+    max-height: 100%;
+    
+    
+    
+
+}
+
+.navbar-list{
+    display: none;
+    list-style: none;
+    column-gap: 15px;
+    
+}
+
+.navbar-list li a{
+    color: blueviolet;
+    text-decoration: none;
+    z-index: -1;
+
+}
+
+.bars-menu{
+    font-size: 1.5rem;
+
+
+
+}
+
+#toggle-menu{
+    display: none;
+
+
+}
+#toggle-menu:checked ~.navbar-list {
+
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    row-gap: 15px;
+    padding: 30px;
+    right: 0px;
+    background: #C5FFF8;
+    border-radius: 20px;
+    animation-name: navbar;
+    animation-duration: 0.5s;
+    z-index: -2;
+    
+
+}
+
+
+
+
+.navbar-list li a:hover{
+    text-decoration: underline;
+    transition-duration: 0.5s;
+    
+    text-shadow: 0 0 20px rgb(22, 0, 223);
+}
+
+body{
+    font-family: var(--texto);
+    font-size: medium;
+    background: var(---Gadien-1);
+    background-size: cover;
+}
+
+/* table */
+
+@media (min-width:481px) and (max-width:768px){
+    header{
+        height: 80px;
+    }
+    .bars-menu{
+        display: none;
+    }
+    .navbar-list{
+        display: flex;
+        font-size: larger;
+    }
+
+}
+
+/* Lapto */
+
+@media (min-width:769px) and (max-width:1279px){
+
+ header{
+        height: 80px;
+    }
+    .bars-menu{
+        display: none;
+    }
+    .navbar-list{
+        display: flex;
+        font-size: larger;
+    }
+}
+
+     
